@@ -1,8 +1,6 @@
 <template>
   <svg
-    width="640"
-    height="640"
-    viewBox="0 0 169.33333 169.33334"
+    viewBox="0 -17 169.33333 170"
     version="1.1"
     id="svg5"
     sodipodi:docname="message-anim.svg"
@@ -11,7 +9,7 @@
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:svg="http://www.w3.org/2000/svg"
-    data--70p-bottom-top="transform: translateY(0vh)"
+    data--40p-bottom-top="transform: translateY(0vh)"
     data-top-top="transform: translateY(-20vh)"
   >
     <sodipodi:namedview

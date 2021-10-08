@@ -82,10 +82,43 @@
         </q-form>
       </div>
     </div>
+    <div
+      class="
+        contact-links
+        grid grid-cols-5
+        justify-items-center
+        w-full
+        my-10
+        text-2xl
+        md:text-6xl
+        lg:text-7xl
+      "
+    >
+      <a href="https://www.linkedin.com/in/lucas-portela-in" target="_blank">
+        <div class="mdi mdi-linkedin"></div>
+      </a>
+      <a href="https://github.com/lucas-portela" target="_blank">
+        <div class="mdi mdi-github"></div>
+      </a>
+      <a href="https://gitlab.com/lucas-portela" target="_blank">
+        <div class="mdi mdi-gitlab"></div>
+      </a>
+      <a href="https://wa.me/+5561982047820" target="_blank">
+        <div class="mdi mdi-whatsapp"></div>
+      </a>
+      <a href="mailto:contact@lucasportela.dev" target="_blank">
+        <div class="mdi mdi-email-outline"></div>
+      </a>
+    </div>
   </SectionBlock>
 </template>
 <style lang="scss">
 .contacts {
+  .contact-links {
+    a {
+      text-align: center;
+    }
+  }
   .message-anim {
     text-align: center;
     svg {

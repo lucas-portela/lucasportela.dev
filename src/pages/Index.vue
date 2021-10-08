@@ -15,15 +15,15 @@
         "
       ></div>
       <div
-        class="content absolute bottom-28 md:bottom-28 md:left-20 p-5 bx-24"
+        class="content absolute bottom-28 md:bottom-20 md:left-20 p-5 bx-24"
         :data-0="$skipInMobile('transform: translateY(0vh)')"
         :data-100p="$skipInMobile('transform: translateY(-50vh)')"
       >
-        <div class="title">{{ name }}</div>
-        <div class="subtitle">
+        <div class="title text-7xl md:text-8xl w-3/4 md:w-full">{{ name }}</div>
+        <div class="subtitle text-lg md:text-2xl">
           {{ devlevel }}
         </div>
-        <div class="intro-joke">
+        <div class="intro-joke text-xl md:text-3xl">
           <i class="mdi mdi-format-quote-open"></i>{{ introJoke
           }}<i class="mdi mdi-format-quote-close"></i>
         </div>
@@ -47,24 +47,19 @@
     }
   }
   .content {
-    max-width: 750px;
+    max-width: 800px;
     font-size: 1.7em;
     font-weight: 300;
     color: white;
     .title {
-      font-size: 3.5em;
       font-weight: 800;
       margin-bottom: 0px;
-      line-height: 1.1em;
     }
     .subtitle {
       font-weight: 500;
       color: $muted-color;
       padding-top: 0px;
       margin-bottom: 0.8em;
-    }
-    .intro-joke {
-      font-size: 1.2em;
     }
   }
 }

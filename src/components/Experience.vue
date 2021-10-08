@@ -234,7 +234,7 @@ export default {
   beforeUnmount() {},
   methods: {
     calculateClockDotStartKeyframe(angleI) {
-      return `data-${-50 + Math.round((angleI * 100) / (12 * 3))}p-bottom-top`;
+      return `data-${-20 + Math.round((angleI * 100) / (12 * 3))}p-bottom-top`;
     },
   },
 };
