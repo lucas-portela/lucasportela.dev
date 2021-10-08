@@ -31,7 +31,13 @@
         :id="sectionId"
         :href="'#' + sectionId"
       >
-        <b class="icon mdi mdi">#</b> <span>{{ title }}</span>
+        <div class="title">
+          <b class="icon mdi mdi">#</b>
+          {{ title }}
+        </div>
+        <div v-if="subtitle" class="text-overline subtitle">
+          <div>{{ subtitle }}</div>
+        </div>
       </a>
       <slot />
     </div>
@@ -47,11 +53,28 @@
   }
   box-sizing: border-box;
   .section-title {
+    margin-top: 0.5em;
     display: block;
     text-align: center;
     font-size: 3em;
     font-weight: 800;
-    margin-bottom: 1em;
+    margin-bottom: 1.7em;
+    line-height: 0;
+    .title {
+      display: block;
+      line-height: 0.9em;
+    }
+    .subtitle {
+      margin-top: 1em;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      line-height: 1.5em;
+      div {
+        display: inline-block;
+        max-width: 640px;
+      }
+    }
     .icon {
       font-size: 0.7em;
     }
@@ -77,7 +100,15 @@
 </style>
 <script>
 export default {
-  props: ["title", "color", "background", "parallax", "dense", "padding"],
+  props: [
+    "title",
+    "subtitle",
+    "color",
+    "background",
+    "parallax",
+    "dense",
+    "padding",
+  ],
   mounted() {
     this.$skrollr.refresh();
   },

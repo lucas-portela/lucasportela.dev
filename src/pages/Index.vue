@@ -32,6 +32,8 @@
     <div id="home-content" class="text-white">
       <TerminalIntro />
       <Experience />
+      <Portfolio />
+      <Contacts />
     </div>
   </div>
 </template>
@@ -80,6 +82,8 @@
 <script>
 import TerminalIntro from "components/TerminalIntro.vue";
 import Experience from "components/Experience.vue";
+import Portfolio from "components/Portfolio.vue";
+import Contacts from "components/Contacts.vue";
 import trunkSketch from "assets/p5/trunk-sketch";
 import p5 from "p5";
 
@@ -87,6 +91,8 @@ export default {
   components: {
     TerminalIntro,
     Experience,
+    Portfolio,
+    Contacts,
   },
   data: () => ({
     name: "Lucas Portela",
