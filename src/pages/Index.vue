@@ -1,0 +1,115 @@
+<template>
+  <div>
+    <div id="home-screen">
+      <div
+        class="p5-bg absolute w-screen top-0 left-0"
+        :data-0="
+          $skipInMobile(
+            'filter: blur(1px); opacity: 1; transform: translateY(0vh);'
+          )
+        "
+        :data-100p="
+          $skipInMobile(
+            'filter: blur(12px); opacity: 0; transform: translateY(30vh);'
+          )
+        "
+      ></div>
+      <div
+        class="content absolute bottom-16 md:bottom-28 md:left-20 p-5 bx-24"
+        :data-0="$skipInMobile('transform: translateY(0vh)')"
+        :data-100p="$skipInMobile('transform: translateY(-50vh)')"
+      >
+        <div class="title">{{ name }}</div>
+        <div class="subtitle">
+          {{ devlevel }}
+        </div>
+        <div class="intro-joke">
+          <i class="mdi mdi-format-quote-open"></i>{{ introJoke
+          }}<i class="mdi mdi-format-quote-close"></i>
+        </div>
+      </div>
+    </div>
+    <div id="home-content" class="text-white">
+      <TerminalIntro />
+      <Experience />
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+#home-screen {
+  .content {
+    max-width: 750px;
+    font-size: 1.7em;
+    font-weight: 300;
+    color: white;
+    .title {
+      font-size: 3.5em;
+      font-weight: 800;
+      margin-bottom: 0px;
+      line-height: 1.1em;
+    }
+    .subtitle {
+      font-weight: 500;
+      color: $muted-color;
+      padding-top: 0px;
+      margin-bottom: 0.8em;
+    }
+    .intro-joke {
+      font-size: 1.2em;
+    }
+  }
+}
+#home-content {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 0px;
+  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.8);
+  background-color: $page-bg;
+}
+</style>
+<script>
+import TerminalIntro from "components/TerminalIntro.vue";
+import Experience from "components/Experience.vue";
+import trunkSketch from "assets/p5/trunk-sketch";
+import p5 from "p5";
+
+export default {
+  components: {
+    TerminalIntro,
+    Experience,
+  },
+  data: () => ({
+    name: "Lucas Portela",
+    devlevel: "Senior Full Stack Developer",
+    introJoke:
+      "Javascripting since the ages of the handy and elegant Notepad++ Code Editor.",
+    sketch: null,
+  }),
+  mounted() {
+    this.setupSketch();
+    this.$skrollr.refresh();
+  },
+  beforeUnmount() {
+    this.removeSketch();
+  },
+  updated() {
+    this.removeSketch();
+    this.setupSketch();
+  },
+  methods: {
+    setupSketch() {
+      this.sketch = new p5(
+        trunkSketch(this.$q.platform.is.mobile),
+        document.querySelector("#home-screen .p5-bg")
+      );
+    },
+    removeSketch() {
+      if (this.sketch) this.sketch.remove();
+    },
+  },
+};
+</script>

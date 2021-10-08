@@ -1,0 +1,113 @@
+// app global css in SCSS form
+body {
+  background-color: $page-bg;
+  overflow-x: hidden;
+}
+
+#skrollr-body {
+  min-height: 100vh;
+}
+
+.text-white {
+  color: white;
+}
+.bg-white {
+  background-color: white;
+}
+.text-primary {
+  color: $primary;
+}
+.bg-primary {
+  background-color: $primary;
+}
+
+.text-primary-0 {
+  color: $color-primary-0;
+}
+.text-primary-1 {
+  color: $color-primary-1;
+}
+.text-primary-2 {
+  color: $color-primary-2;
+}
+.text-primary-3 {
+  color: $color-primary-3;
+}
+.text-primary-4 {
+  color: $color-primary-4;
+}
+.text-accent-a-0 {
+  color: $color-accent-a-0;
+}
+.text-accent-a-1 {
+  color: $color-accent-a-1;
+}
+.text-accent-a-2 {
+  color: $color-accent-a-2;
+}
+.text-accent-a-3 {
+  color: $color-accent-a-3;
+}
+.text-accent-a-4 {
+  color: $color-accent-a-4;
+}
+.text-accent-b-0 {
+  color: $color-accent-b-0;
+}
+.text-accent-b-1 {
+  color: $color-accent-b-1;
+}
+.text-accent-b-2 {
+  color: $color-accent-b-2;
+}
+.text-accent-b-3 {
+  color: $color-accent-b-3;
+}
+.text-accent-b-4 {
+  color: $color-accent-b-4;
+}
+.bg-primary-0 {
+  background-color: $color-primary-0;
+}
+.bg-primary-1 {
+  background-color: $color-primary-1;
+}
+.bg-primary-2 {
+  background-color: $color-primary-2;
+}
+.bg-primary-3 {
+  background-color: $color-primary-3;
+}
+.bg-primary-4 {
+  background-color: $color-primary-4;
+}
+.bg-accent-a-0 {
+  background-color: $color-accent-a-0;
+}
+.bg-accent-a-1 {
+  background-color: $color-accent-a-1;
+}
+.bg-accent-a-2 {
+  background-color: $color-accent-a-2;
+}
+.bg-accent-a-3 {
+  background-color: $color-accent-a-3;
+}
+.bg-accent-a-4 {
+  background-color: $color-accent-a-4;
+}
+.bg-accent-b-0 {
+  background-color: $color-accent-b-0;
+}
+.bg-accent-b-1 {
+  background-color: $color-accent-b-1;
+}
+.bg-accent-b-2 {
+  background-color: $color-accent-b-2;
+}
+.bg-accent-b-3 {
+  background-color: $color-accent-b-3;
+}
+.bg-accent-b-4 {
+  background-color: $color-accent-b-4;
+}
