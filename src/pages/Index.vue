@@ -15,7 +15,7 @@
         "
       ></div>
       <div
-        class="content absolute bottom-16 md:bottom-28 md:left-20 p-5 bx-24"
+        class="content absolute bottom-28 md:bottom-28 md:left-20 p-5 bx-24"
         :data-0="$skipInMobile('transform: translateY(0vh)')"
         :data-100p="$skipInMobile('transform: translateY(-50vh)')"
       >
@@ -38,6 +38,12 @@
 
 <style lang="scss">
 #home-screen {
+  .p5-bg {
+    canvas {
+      position: absolute;
+      transform: scale(1.2);
+    }
+  }
   .content {
     max-width: 750px;
     font-size: 1.7em;

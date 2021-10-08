@@ -316,17 +316,23 @@
     //Triggers parsing of elements and a first reflow.
     _instance.refresh();
 
+    let _reflowRequestTimeout = null;
+
     _addEvent(window, "resize orientationchange", function () {
-      var width = documentElement.clientWidth;
-      var height = documentElement.clientHeight;
+      if (_reflowRequestTimeout) clearTimeout(_reflowRequestTimeout);
+      _reflowRequestTimeout = setTimeout(() => {
+        console.log("requesting reflow!");
+        var width = documentElement.clientWidth;
+        var height = documentElement.clientHeight;
 
-      //Only reflow if the size actually changed (#271).
-      if (height !== _lastViewportHeight || width !== _lastViewportWidth) {
-        _lastViewportHeight = height;
-        _lastViewportWidth = width;
+        //Only reflow if the size actually changed (#271).
+        if (height !== _lastViewportHeight || width !== _lastViewportWidth) {
+          _lastViewportHeight = height;
+          _lastViewportWidth = width;
 
-        _requestReflow = true;
-      }
+          _requestReflow = true;
+        }
+      }, 1000);
     });
 
     var requestAnimFrame = polyfillRAF();

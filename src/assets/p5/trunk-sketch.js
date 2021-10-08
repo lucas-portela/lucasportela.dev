@@ -70,7 +70,7 @@ export default (disableLoop = false) =>
 
     p.draw = function () {
       p.clear();
-      p.translate(p.width / 2, p.height / 2);
+      p.translate(p.width * 0.5, p.height * 0.5);
       display();
     };
 

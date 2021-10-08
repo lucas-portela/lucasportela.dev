@@ -4,15 +4,6 @@ import $ from "jquery";
 // import srSmoothscroll from "../lib/jquery.simplr.smoothscroll";
 
 export default boot(({ app }) => {
-  app.config.globalProperties.$scrollTo = (el) =>
-    setTimeout(() =>
-      $("html, body").animate(
-        {
-          scrollTop: $(el).offset().top - 10,
-        },
-        1000
-      )
-    );
   //   mouseWheel($);
   //   srSmoothscroll($);
   //   $(() => {

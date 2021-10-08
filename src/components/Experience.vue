@@ -7,7 +7,7 @@
     color="primary"
     :dense="true"
   >
-    <div class="clock sm:w-full md:w-2/4 mb-10">
+    <div class="clock w-full md:w-2/4 mb-10">
       <svg viewBox="0 0 640 640">
         <g transform="translate(320, 320)">
           <g

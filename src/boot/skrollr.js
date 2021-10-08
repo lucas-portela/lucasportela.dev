@@ -1,3 +1,4 @@
+import $ from "jquery";
 import { boot } from "quasar/wrappers";
 import _skrollr from "../lib/skrollr";
 import { EventEmitter } from "events";
@@ -14,9 +15,9 @@ export default boot(({ app }) => {
 
   app.config.globalProperties.$skrollr = skrollr;
   app.config.globalProperties.$skrollr;
-  // app.config.globalProperties.$skrollr = {
-  //   refresh() {},
-  // };
+
+  app.config.globalProperties.$scrollTo = (el) =>
+    setTimeout(() => skrollr.animateTo($(el).offset().top - 10));
 });
 
 export { skrollr };
