@@ -127,7 +127,7 @@ export default {
       if (this.state == 4) {
         this.state = 0;
         this.skrollrListener();
-        this.$scrollTo("#letsbashmeout");
+        this.$skrollr.animateTo(window.innerHeight);
       } else if (this.state == 2) {
         this.state = 3;
         $(this.$refs.termynal).find("*").remove();
