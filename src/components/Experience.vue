@@ -11,22 +11,22 @@
       <svg viewBox="0 0 640 640">
         <g transform="translate(320, 320)">
           <g
-            data-top-bottom="@transform: rotate(180) rotate(0);"
-            data-bottom-top="@transform: rotate(180) rotate(-360);"
+            data-bottom-top="@transform: rotate(180) rotate(0);"
+            data-top-bottom="@transform: rotate(180) rotate(360);"
           >
             <rect class="pointer-one" x="-15" y="-50" width="30" height="300" />
           </g>
 
           <g
-            data-top-bottom="@transform: rotate(180) rotate(0);"
-            data-bottom-top="@transform: rotate(180) rotate(-800);"
+            data-bottom-top="@transform: rotate(180) rotate(0);"
+            data-top-bottom="@transform: rotate(180) rotate(1080);"
           >
             <rect class="pointer-two" x="-7" y="-40" width="15" height="190" />
           </g>
           <rect class="center-pieces" x="-10" y="-10" width="20" height="20" />
           <circle class="center-pieces" r="2" />
           <rect
-            v-for="angle in [
+            v-for="(angle, angleI) in [
               0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330,
             ]"
             :key="angle"
@@ -35,10 +35,11 @@
             y="-7"
             width="35"
             height="15"
-            :transform="`rotate(${angle})`"
+            :[calculateClockDotStartKeyframe(angleI*0.5)]="`@transform: rotate(${angle}) scale(0)`"
+            :data-50p-top-bottom="`@transform: rotate(${angle}) scale(1)`"
           />
           <rect
-            v-for="angle in [
+            v-for="(angle, angleI) in [
               0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330,
             ]
               .map((x) => [x + 10, x + 20])
@@ -49,7 +50,8 @@
             y="-2.5"
             width="35"
             height="5"
-            :transform="`rotate(${angle})`"
+            :[calculateClockDotStartKeyframe(angleI)]="`@transform: rotate(${angle}) scale(0)`"
+            :data-50p-top-bottom="`@transform: rotate(${angle}) scale(1)`"
           />
         </g>
       </svg>
@@ -62,14 +64,14 @@
         class="grid grid-cols-6"
       >
         <div
-          class="sm:col-span-2 md:col-span-1 timeline-year"
+          class="col-span-2 md:col-span-1 timeline-year"
           data--40p-bottom-top="transform: translateX(-50px); opacity: 0; "
           data--60p-bottom-top="transform: translateX(0px); opacity: 1;"
         >
-          <div class="sm:hidden md:block text-h4">{{ year.name }}</div>
-          <div class="sm:block md:hidden text-h5">{{ year.name }}</div>
+          <div class="hidden md:block text-h4">{{ year.name }}</div>
+          <div class="block md:hidden text-h5">{{ year.name }}</div>
         </div>
-        <div class="sm:col-span-4 md:col-span-5 timeline-months">
+        <div class="col-span-4 md:col-span-5 timeline-months">
           <div
             v-for="(month, monthI) of year.months"
             :key="monthI"
@@ -209,6 +211,10 @@ export default {
     this.$skrollr.refresh();
   },
   beforeUnmount() {},
-  methods: {},
+  methods: {
+    calculateClockDotStartKeyframe(angleI) {
+      return `data-${-50 + Math.round((angleI * 100) / (12 * 3))}p-bottom-top`;
+    },
+  },
 };
 </script>
