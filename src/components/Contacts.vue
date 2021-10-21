@@ -94,20 +94,25 @@
         lg:text-7xl
       "
     >
-      <a href="https://www.linkedin.com/in/lucas-portela-in" target="_blank">
+      <a href="https://www.linkedin.com/in/lsnp" target="_blank">
         <div class="mdi mdi-linkedin"></div>
+        <q-tooltip class="bg-primary"> LinkedIn </q-tooltip>
       </a>
       <a href="https://github.com/lucas-portela" target="_blank">
         <div class="mdi mdi-github"></div>
+        <q-tooltip class="bg-primary"> GitHub </q-tooltip>
       </a>
-      <a href="https://gitlab.com/lucas-portela" target="_blank">
-        <div class="mdi mdi-gitlab"></div>
+      <a href="http://lattes.cnpq.br/1286690602829243" target="_blank">
+        <img src="images/cnpq.png" class="h-8 md:h-20" />
+        <q-tooltip class="bg-primary"> Lattes CV from CNPq </q-tooltip>
       </a>
       <a href="https://wa.me/+5561982047820" target="_blank">
         <div class="mdi mdi-whatsapp"></div>
+        <q-tooltip class="bg-primary">WhatsApp +55 61 98204 7820 </q-tooltip>
       </a>
       <a href="mailto:contact@lucasportela.dev" target="_blank">
         <div class="mdi mdi-email-outline"></div>
+        <q-tooltip class="bg-primary"> E-mail </q-tooltip>
       </a>
     </div>
   </SectionBlock>

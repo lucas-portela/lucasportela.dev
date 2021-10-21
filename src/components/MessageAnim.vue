@@ -37,7 +37,7 @@
     <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
       <path
         style="
-          fill: #500671;
+          fill: #280391;
           fill-opacity: 1;
           stroke: none;
           stroke-width: 0.79375;
@@ -56,7 +56,7 @@
       <rect
         style="
           opacity: 1;
-          fill: #500773;
+          fill: #280391;
           fill-opacity: 1;
           stroke: none;
           stroke-width: 0.79375;
@@ -68,9 +68,9 @@
         "
         id="rect2641"
         width="123.9796"
-        height="79.866478"
+        height="80.866478"
         x="23.140728"
-        y="69.779076"
+        y="69.5"
       />
       <g
         id="message"
@@ -82,7 +82,7 @@
         <rect
           style="
             opacity: 1;
-            fill: #6d089c;
+            fill: #3813a1;
             fill-opacity: 1;
             stroke: #ffffff;
             stroke-width: 0.79375;
@@ -1175,7 +1175,7 @@ blanditiis"
       </g>
       <path
         style="
-          fill: #6d089c;
+          fill: #3813a1;
           fill-opacity: 1;
           stroke: #ffffff;
           stroke-width: 0.79375;
@@ -1191,7 +1191,7 @@ blanditiis"
       />
       <path
         style="
-          fill: #6d089c;
+          fill: #3813a1;
           fill-opacity: 1;
           stroke: #ffffff;
           stroke-width: 0.79375;
@@ -1207,7 +1207,7 @@ blanditiis"
       />
       <path
         style="
-          fill: #6d089c;
+          fill: #3813a1;
           fill-opacity: 1;
           stroke: #ffffff;
           stroke-width: 0.79375;
@@ -1228,7 +1228,7 @@ blanditiis"
       >
         <path
           style="
-            fill: #6d089c;
+            fill: #3813a1;
             fill-opacity: 1;
             stroke: #ffffff;
             stroke-width: 0.79375;

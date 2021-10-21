@@ -40,6 +40,11 @@
 
 <style lang="scss">
 #home-screen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
   .p5-bg {
     canvas {
       position: absolute;
@@ -64,13 +69,12 @@
   }
 }
 #home-content {
-  position: absolute;
-  top: 100vh;
+  margin-top: 100vh;
   width: 100%;
   box-sizing: border-box;
   min-height: 100vh;
   padding: 0px;
-  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 50px 10px transparentize($color: $primary, $amount: 0.5);
   background-color: $page-bg;
 }
 </style>
@@ -80,7 +84,9 @@ import Experience from "components/Experience.vue";
 import Portfolio from "components/Portfolio.vue";
 import Contacts from "components/Contacts.vue";
 import trunkSketch from "assets/p5/trunk-sketch";
+
 import p5 from "p5";
+import * as $ from "jquery";
 
 export default {
   components: {
@@ -111,7 +117,7 @@ export default {
     setupSketch() {
       this.sketch = new p5(
         trunkSketch(this.$q.platform.is.mobile),
-        document.querySelector("#home-screen .p5-bg")
+        $("#home-screen .p5-bg")[0]
       );
     },
     removeSketch() {

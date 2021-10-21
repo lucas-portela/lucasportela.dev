@@ -17,10 +17,34 @@ body {
 .text-primary {
   color: $primary;
 }
+.text-positive {
+  color: $positive;
+}
+.text-negative {
+  color: $negative;
+}
+.text-info {
+  color: $info;
+}
+.text-warning {
+  color: $warning;
+}
+
 .bg-primary {
   background-color: $primary;
 }
-
+.bg-positive {
+  background-color: $positive;
+}
+.bg-negative {
+  background-color: $negative;
+}
+.bg-info {
+  background-color: $info;
+}
+.bg-warning {
+  background-color: $warning;
+}
 .text-primary-0 {
   color: $color-primary-0;
 }
@@ -110,4 +134,7 @@ body {
 }
 .bg-accent-b-4 {
   background-color: $color-accent-b-4;
+}
+.bg-transparent {
+  background-color: red;
 }

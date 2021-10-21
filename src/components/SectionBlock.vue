@@ -4,8 +4,8 @@
     :class="{
       section: true,
       dense: dense,
-      ['bg-' + background]: background,
       ['text-' + color]: color,
+      'bg-white': true,
     }"
   >
     <div
@@ -15,6 +15,7 @@
       data-top-bottom="background-position-y: -70%"
       data-bottom-top="background-position-y: 70%"
     ></div>
+    <div :class="{ bg: true, ['bg-' + background]: background }"></div>
     <div
       :class="{
         content: true,
@@ -52,6 +53,10 @@
     min-height: 100vh;
   }
   box-sizing: border-box;
+  .bg {
+    position: absolute;
+    opacity: 0.8;
+  }
   .section-title {
     margin-top: 0.5em;
     display: block;
@@ -89,13 +94,15 @@
     position: absolute;
     background-size: auto 150%;
     background-position: center 0px;
-    opacity: 0.1;
+    opacity: 1;
   }
-}
-.section .parallax {
-  top: 0px;
-  width: 100%;
-  height: 100%;
+
+  .parallax,
+  .bg {
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
 <script>

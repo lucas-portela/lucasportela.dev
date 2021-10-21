@@ -39,10 +39,10 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 */
-export default (disableLoop = false) =>
+export default (disableLoop = false, height = null) =>
   function (p) {
     let width = window.innerWidth;
-    let height = window.innerHeight;
+    height = height || window.innerHeight;
     let speed = 0.01;
     let minSpeed = 0.007;
 

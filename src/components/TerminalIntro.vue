@@ -3,9 +3,9 @@
     refs="section"
     class="terminal-intro"
     title="let's $bash me out"
-    background="primary-3"
     color="white"
-    parallax="https://images.pexels.com/photos/2767814/pexels-photo-2767814.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    background="accent-a-4"
+    parallax="images/holisma-screenshot.png"
     :dense="false"
   >
     <div class="flex flex-row justify-center">
@@ -61,7 +61,7 @@ export default {
     keyframeEvent: "termynal.data80p.down",
     state: 0,
     summary:
-      "Web App Development, Mobile App Development, Geolocation, RFID Systems, Web Scrapping, IA and Computer Vision.",
+      "Web App Development, Mobile App Development, Monolithic and Microservice back-end Development, Geolocation Applications, RFID Systems, Web Scrapping, Protocol Reverse Engineering, IA and Computer Vision.",
     skills: [
       "NodeJS, Tomcat, Apache and Nginx",
       "Amazon S3 and EC2, Google Cloud Computing, Firebase",

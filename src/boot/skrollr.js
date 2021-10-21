@@ -14,7 +14,7 @@ export default boot(({ app }) => {
   window.skrollr = skrollr;
 
   app.config.globalProperties.$skrollr = skrollr;
-  app.config.globalProperties.$skrollr;
+  // app.config.globalProperties.$skrollr = {};
 
   app.config.globalProperties.$scrollTo = (el) =>
     setTimeout(() => skrollr.animateTo($(el).offset().top - 10));

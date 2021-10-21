@@ -55,7 +55,7 @@
               width="35"
               height="15"
               :[calculateClockDotStartKeyframe(angleI*0.5)]="`@transform: rotate(${angle}) scale(0)`"
-              :data-50p-top-bottom="`@transform: rotate(${angle}) scale(1)`"
+              :data-70p-top-bottom="`@transform: rotate(${angle}) scale(1)`"
             />
             <rect
               v-for="(angle, angleI) in [
