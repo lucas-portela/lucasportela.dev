@@ -4,7 +4,7 @@
     class="terminal-intro"
     title="let's $bash me out"
     color="white"
-    background="accent-a-4"
+    background="primary-4"
     parallax="images/holisma-screenshot.png"
     :dense="false"
   >

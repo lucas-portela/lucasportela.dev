@@ -15,7 +15,9 @@
       data-top-bottom="background-position-y: -70%"
       data-bottom-top="background-position-y: 70%"
     ></div>
-    <div :class="{ bg: true, ['bg-' + background]: background }"></div>
+    <div
+      :class="{ 'section-block-bg': true, ['bg-' + background]: background }"
+    ></div>
     <div
       :class="{
         content: true,
@@ -53,7 +55,7 @@
     min-height: 100vh;
   }
   box-sizing: border-box;
-  .bg {
+  .section-block-bg {
     position: absolute;
     opacity: 0.8;
   }
@@ -98,7 +100,7 @@
   }
 
   .parallax,
-  .bg {
+  .section-block-bg {
     top: 0px;
     width: 100%;
     height: 100%;

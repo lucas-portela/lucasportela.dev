@@ -28,6 +28,10 @@
           }}<i class="mdi mdi-format-quote-close"></i>
         </div>
       </div>
+      <div
+        id="btn-scroll-down"
+        class="absolute left-1/2 bottom-5 text-4xl mdi mdi-arrow-down"
+      ></div>
     </div>
     <div id="home-content" class="text-white">
       <TerminalIntro />
@@ -77,6 +81,25 @@
   box-shadow: 0px 0px 50px 10px transparentize($color: $primary, $amount: 0.5);
   background-color: $page-bg;
 }
+
+#btn-scroll-down {
+  animation: btn-scroll-down 2s infinite;
+  color: transparentize($color: $color-accent-a-1, $amount: 0);
+}
+
+@keyframes btn-scroll-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0%) translateX(-50%);
+  }
+}
 </style>
 <script>
 import TerminalIntro from "components/TerminalIntro.vue";
@@ -99,7 +122,7 @@ export default {
     name: "Lucas Portela",
     devlevel: "Senior Full Stack Developer",
     introJoke:
-      "Javascripting since the ages of the handy and elegant Notepad++ Code Editor.",
+      "A brazilian dude Javascripting since the ages of the handy and elegant Notepad++ Code Editor.",
     sketch: null,
   }),
   mounted() {

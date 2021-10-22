@@ -46,7 +46,7 @@ export default (disableLoop = false, height = null) =>
     let speed = 0.01;
     let minSpeed = 0.007;
 
-    let color = "#6d089c";
+    let color = "#3813a1";
     let rings = 40;
     let dim_init = 120;
     let dim_delta = 7;

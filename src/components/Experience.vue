@@ -80,38 +80,40 @@
         <div
           v-for="(year, yearI) of timeline"
           :key="yearI"
-          class="grid grid-cols-6"
+          class="flex flex-row flex-nowrap"
         >
           <div
-            class="col-span-2 md:col-span-1 timeline-year"
+            class="timeline-year flex-none h-screen"
             data--40p-bottom-top="transform: translateX(-50px); opacity: 0; "
             data--60p-bottom-top="transform: translateX(0px); opacity: 1;"
           >
-            <div class="hidden md:block text-h4">{{ year.name }}</div>
-            <div class="block md:hidden text-h5">{{ year.name }}</div>
+            <div class="hidden md:block text-h4 desktop">{{ year.name }}</div>
+            <div class="block md:hidden text-h6 mobile">{{ year.name }}</div>
           </div>
-          <div class="col-span-4 md:col-span-5 timeline-months">
-            <div
-              v-for="(month, monthI) of year.months"
-              :key="monthI"
-              :class="{
-                'timeline-month': true,
-                'last-month':
-                  yearI >= timeline.length - 1 &&
-                  monthI >= year.months.length - 1,
-              }"
-              data-bottom-top="transform: translateY(30vh); opacity: 0; border-color: transparent;"
-              data--30p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: transparent;"
-              data--90p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: initial;"
-            >
-              <div class="month-name">
-                <div class="text-h5">{{ month.name }}</div>
-              </div>
-              <div class="content">
-                <div class="text-body1 title">{{ month.title }}</div>
-                <p>
-                  {{ month.content }}
-                </p>
+          <div class="flex-grow">
+            <div class="timeline-months">
+              <div
+                v-for="(month, monthI) of year.months"
+                :key="monthI"
+                :class="{
+                  'timeline-month': true,
+                  'last-month':
+                    yearI >= timeline.length - 1 &&
+                    monthI >= year.months.length - 1,
+                }"
+                data-bottom-top="transform: translateY(30vh); opacity: 0; border-color: transparent;"
+                data--30p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: transparent;"
+                data--90p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: initial;"
+              >
+                <div class="month-name">
+                  <div class="text-h5">{{ month.name }}</div>
+                </div>
+                <div class="content">
+                  <div class="text-body1 title">{{ month.title }}</div>
+                  <div>
+                    {{ month.content }}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -129,7 +131,7 @@
     transition: transform 0.1s;
     svg {
       display: inline-block;
-      fill: $primary;
+      fill: $color-accent-a-1;
       stroke: white;
       stroke-width: 3;
       width: 70%;
@@ -138,7 +140,13 @@
   .timeline {
     display: inline-block !important;
     .timeline-year {
-      margin-top: -1.6em;
+      .desktop {
+        margin-top: -1.6em;
+      }
+      .mobile {
+        margin-top: -0.8em;
+      }
+
       text-align: right;
       padding-right: 20px;
       .text-h5 {

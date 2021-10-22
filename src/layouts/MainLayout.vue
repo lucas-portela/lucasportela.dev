@@ -58,6 +58,16 @@
           <router-link to="/oss-licenses">OSS Licenses</router-link>
         </div>
         <div class="copyright">© 2021 Lucas Portela, All Rights Reserved.</div>
+        <a
+          rel="license"
+          target="_blank"
+          href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+          ><img
+            alt="Creative Commons License"
+            style="display: inline"
+            src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"
+          />
+        </a>
       </div>
     </div>
   </div>
@@ -127,16 +137,17 @@ export default {
   mounted() {
     window.$ = $;
     this.$skrollr.refresh();
-    if (window.location.hash) {
-      this.$scrollTo(window.location.hash);
-    }
+    this.scrollToHashtag();
   },
   beforeRouteUpdate(to, from, next) {
     if (this.goingBack) {
       if (to.name == "home") this.previousRoutes = 0;
       else this.previousRoutes -= 1;
       this.goingBack = false;
-    } else this.previousRoutes += 1;
+    } else {
+      this.previousRoutes += 1;
+      this.scrollToHashtag();
+    }
     next();
   },
   methods: {
@@ -144,6 +155,13 @@ export default {
       this.goingBack = true;
       if (this.previousRoutes > 0) this.$router.back();
       else this.$router.push({ name: "home" });
+    },
+    scrollToHashtag() {
+      setTimeout(() => {
+        if (window.location.hash) {
+          this.$scrollTo(window.location.hash);
+        }
+      }, 100);
     },
   },
 };

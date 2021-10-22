@@ -112,7 +112,7 @@
       </a>
       <a href="mailto:contact@lucasportela.dev" target="_blank">
         <div class="mdi mdi-email-outline"></div>
-        <q-tooltip class="bg-primary"> E-mail </q-tooltip>
+        <q-tooltip class="bg-primary"> contact@lucasportela.dev </q-tooltip>
       </a>
     </div>
   </SectionBlock>

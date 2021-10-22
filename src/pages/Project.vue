@@ -19,7 +19,7 @@
         :data-0="$skipInMobile('opacity: 1; transform: translateY(0vh);')"
         :data-30p="$skipInMobile('opacity: 0; transform: translateY(-30vh);')"
       >
-        <div class="title text-7xl md:text-8xl">
+        <div class="title text-5xl md:text-6xl">
           {{ project.title }}
         </div>
         <a
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-5">
+        <div class="grid md:grid-cols-2 gap-5 mb-10">
           <div>
             {{ project.description }}
           </div>
@@ -79,7 +79,7 @@
               navigation
               padding
               arrows
-              class="images"
+              class="images h-52 md:h-80"
             >
               <q-carousel-slide
                 v-for="(image, index) in project.images"
@@ -157,8 +157,7 @@
       }
 
       .images {
-        height: 70vh;
-        border-radius: 20px;
+        border-radius: 10px;
         background-color: $color-primary-4;
         .image {
           display: block;
@@ -180,9 +179,7 @@ import p5 from "p5";
 import * as $ from "jquery";
 
 export default {
-  components: {
-    // TerminalIntro,
-  },
+  components: {},
   data: () => ({
     portfolio,
     slide: "image-0",

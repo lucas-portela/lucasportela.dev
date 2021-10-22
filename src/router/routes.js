@@ -8,6 +8,10 @@ const routes = [
         path: "/project/:id",
         component: () => import("src/pages/Project.vue"),
       },
+      {
+        path: "/oss-licenses",
+        component: () => import("src/pages/OssLicenses.vue"),
+      },
     ],
   },
 

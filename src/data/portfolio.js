@@ -20,7 +20,11 @@ minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
 quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur 
 fugiat, temporibus enim commodi iusto libero magni deleniti quod quam 
 consequuntur! Commodi minima excepturi repudiandae velit hic maxime`,
-    images: ["images/vcai-certificate.jpg", "images/portfolio.jpg"],
+    images: [
+      "images/holisma-screenshot.png",
+      "images/vcai-certificate.jpg",
+      "images/portfolio.jpg",
+    ],
   },
   {
     id: "logpp",

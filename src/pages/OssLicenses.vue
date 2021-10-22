@@ -1,5 +1,5 @@
 <template>
-  <div class="oss-licenses">
+  <div class="project">
     <div
       class="p5-bg absolute w-screen top-0 left-0"
       :data-0="
@@ -19,21 +19,71 @@
         :data-0="$skipInMobile('opacity: 1; transform: translateY(0vh);')"
         :data-30p="$skipInMobile('opacity: 0; transform: translateY(-30vh);')"
       >
-        <div class="title text-7xl md:text-8xl">
+        <div class="title text-5xl md:text-6xl">
           Open Source Software Licenses
         </div>
         <a
           class="my-name text-lg md:text-2xl mb-5 md:mb-10"
           @click="$router.push({ name: 'home' })"
-          >lucasportela.dev</a
+          >By Lucas Portela</a
         >
       </div>
-      <div class="content px-5 md:px-20">
-        <div class="grid grid-cols-2 gap-5">
+      <div class="content px-5 md:px-20 pt-4">
+        <div class="grid md:grid-cols-2 gap-5 mb-10">
           <div>
-            {{ project.description }}
+            <div class="text-h5 mb-2">This Website IS NOT Open Source</div>
+            <div>
+              This website depends on some open source libs and projects, but it
+              is not open source. Therefore this work by
+              <a
+                xmlns:cc="http://creativecommons.org/ns#"
+                href="https://lucasportela.dev"
+                property="cc:attributionName"
+                rel="cc:attributionURL"
+                >Lucas Santana do Nascimento Portela</a
+              >
+              is licensed under a
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+                >Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+                International License</a
+              >.
+              <div class="text-center mt-2">
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+                  ><img
+                    alt="Creative Commons License"
+                    style="border-width: 0"
+                    src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"
+                    class="inline-block"
+                /></a>
+              </div>
+            </div>
           </div>
-          <div></div>
+          <div>
+            <div class="text-h5 mb-2">HERE are the Open Source Stuff</div>
+            <div>
+              This work depends on or includes substantial copies of the
+              following projects:
+              <ul class="ml-5 my-5">
+                <li
+                  class="mb-1"
+                  v-for="(license, index) in ossLicenses"
+                  :key="index"
+                >
+                  <i class="mdi mdi-chevron-right"></i>
+                  <b>{{ license.title }}:</b> {{ license.description }}
+                  <a :href="license.link" target="_blank" class="text-xs"
+                    >(view license)
+                  </a>
+                </li>
+              </ul>
+              Click <a href="3rd-party-licenses.txt">here</a> to view all
+              licenses associated to this work.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,65 +126,33 @@
     .content {
       display: inline-block;
       width: 100%;
-      min-height: 100vh;
       background: white;
       font-size: 1.2em;
       font-weight: 300;
       color: rgba(0, 0, 0, 0.6);
-      text-align: justify;
+      // text-align: justify;
       box-shadow: 0px 0px 50px 10px
         transparentize($color: $primary, $amount: 0.5);
-
-      .properties {
-        & > * {
-          display: inline-block;
-          margin-right: 10px;
-          margin-top: 10px;
-          font-size: 0.8em;
-        }
-        .badge {
-          padding: 5px 10px;
-          border-radius: 10px;
-          color: white;
-        }
-      }
-
-      .images {
-        height: 70vh;
-        border-radius: 20px;
-        background-color: $color-primary-4;
-        .image {
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
+      a {
+        color: $color-accent-a-1;
+        font-style: italic;
       }
     }
   }
 }
 </style>
 <script>
-import portfolio from "../data/portfolio";
+import ossLicenses from "../data/oss-licenses";
 import trunkSketch from "assets/p5/trunk-sketch";
 import p5 from "p5";
 import * as $ from "jquery";
 
 export default {
-  components: {
-    // TerminalIntro,
-  },
+  components: {},
   data: () => ({
-    portfolio,
-    slide: "image-0",
+    ossLicenses,
   }),
-  computed: {
-    project() {
-      return this.portfolio.find((x) => x.id == this.$route.params.id);
-    },
-  },
+  computed: {},
   mounted() {
     this.setupSketch();
     this.$skrollr.refresh();
