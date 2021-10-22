@@ -219,6 +219,8 @@ export default {
         year.months.push({
           name: exp.month,
           title: exp.title,
+          role: exp.role,
+          duration: exp.duration,
           content: exp.description,
         });
       });
