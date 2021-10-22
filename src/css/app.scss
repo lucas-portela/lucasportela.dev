@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+.debug,
+.debug * {
+  border: solid red 1px !important;
+}
 #skrollr-body {
   min-height: 100vh;
 }

@@ -30,11 +30,19 @@
       </div>
       <div
         id="btn-scroll-down"
-        class="absolute left-1/2 bottom-5 text-4xl mdi mdi-arrow-down"
+        class="
+          absolute
+          left-1/2
+          bottom-5
+          text-4xl
+          mdi mdi-arrow-down
+          cursor-pointer
+        "
+        @click="$scrollTo('.section')"
       ></div>
     </div>
     <div id="home-content" class="text-white">
-      <TerminalIntro />
+      <TerminalIntro ref="nextScreen" />
       <Experience />
       <Portfolio />
       <Contacts />

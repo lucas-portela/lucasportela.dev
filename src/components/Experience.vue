@@ -83,7 +83,7 @@
           class="flex flex-row flex-nowrap"
         >
           <div
-            class="timeline-year flex-none h-screen"
+            class="timeline-year flex-none"
             data--40p-bottom-top="transform: translateX(-50px); opacity: 0; "
             data--60p-bottom-top="transform: translateX(0px); opacity: 1;"
           >
@@ -103,7 +103,7 @@
                 }"
                 data-bottom-top="transform: translateY(30vh); opacity: 0; border-color: transparent;"
                 data--30p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: transparent;"
-                data--90p-bottom-top="transform: translateY(0vh); opacity: 1; border-color: initial;"
+                data--30p-bottom-bottom="transform: translateY(0vh); opacity: 1; border-color: initial;"
               >
                 <div class="month-name">
                   <div class="text-h5">{{ month.name }}</div>
@@ -191,6 +191,7 @@
 }
 </style>
 <script>
+import experience from "../data/experience";
 import SectionBlock from "components/SectionBlock.vue";
 
 export default {
@@ -199,45 +200,31 @@ export default {
   },
   data: () => ({
     termynal: null,
-    timeline: [
-      {
-        name: "2018",
-        months: [
-          {
-            name: "August",
-            title: "Lorem Ipsum",
-            content:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid.",
-          },
-          {
-            name: "December",
-            title: "Lorem Ipsum",
-            content:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid.",
-          },
-        ],
-      },
-      {
-        name: "2019",
-        months: [
-          {
-            name: "January",
-            title: "Lorem Ipsum",
-            content:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid.",
-          },
-          {
-            name: "January",
-            title: "Lorem Ipsum",
-            content:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid.",
-          },
-        ],
-      },
-    ],
   }),
   mounted() {
     this.$skrollr.refresh();
+  },
+  computed: {
+    timeline() {
+      const timeline = [];
+      experience.forEach((exp) => {
+        const year =
+          timeline.find((y) => y.name == exp.year) ||
+          timeline[
+            timeline.push({
+              name: exp.year,
+              months: [],
+            }) - 1
+          ];
+        year.months.push({
+          name: exp.month,
+          title: exp.title,
+          content: exp.description,
+        });
+      });
+
+      return timeline;
+    },
   },
   beforeUnmount() {},
   methods: {

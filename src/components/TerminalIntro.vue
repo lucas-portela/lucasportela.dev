@@ -6,7 +6,7 @@
     color="white"
     background="primary-4"
     parallax="images/holisma-screenshot.png"
-    :dense="false"
+    :dense="true"
   >
     <div class="flex flex-row justify-center">
       <div
