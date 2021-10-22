@@ -110,6 +110,9 @@
                 </div>
                 <div class="content">
                   <div class="text-body1 title">{{ month.title }}</div>
+                  <div class="text-caption">
+                    role: {{ month.role }}, duration: {{ month.duration }}
+                  </div>
                   <div>
                     {{ month.content }}
                   </div>
@@ -182,8 +185,11 @@
       .content {
         text-align: justify;
         margin-top: 0.5em;
+        font-weight: 300;
         .title {
-          margin-bottom: 0.2em;
+          font-weight: 400;
+          margin-bottom: -0.2em;
+          text-transform: uppercase;
         }
       }
     }
