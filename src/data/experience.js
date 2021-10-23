@@ -11,7 +11,7 @@ export default [
       and developed 2 projects in the field with functional prototypes, ALP (in english PLA - Propositional Logic Analyzer) and LOG++, wich I presented
       in the V Colloquy of Information Architecture, an event that occurred in 2015 at UnB.
       The project LOG++ was adapted by me and evolved to a new project whose name was SARC (in english ASCR - Accessible
-        System of Cognitive Robotics). SARC was the  presented in the V MNR
+        System of Cognitive Robotics). SARC was presented in the V MNR
         (in english 5th National Robotics Show) representing UnB.`,
   },
   {
@@ -23,7 +23,7 @@ export default [
     description: `After the end of my trainee contract, I've launched myself in the freelance market working in
       low budget projects to get experience and to build some networking. During this time I've used
       Java EE, PHP, MySQL, Web-design, social media and Search Engine Optimization. My most remarkable
-      work in this period was the development of a realtime multiplayer card game using a development stack build over WebSockets, Java EE and HTML5.`,
+      work in this period was the development of a realtime multiplayer card game using technologies such as WebSocket, Java EE and HTML5.`,
   },
   {
     year: "2017",

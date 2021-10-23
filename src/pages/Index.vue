@@ -130,7 +130,7 @@ export default {
     name: "Lucas Portela",
     devlevel: "Senior Full Stack Developer",
     introJoke:
-      "A brazilian dude Javascripting since the ages of the handy and elegant Notepad++ Code Editor.",
+      "A brazilian self-taught dev JavaScripting since the ages of the handy and elegant Notepad++ Code Editor.",
     sketch: null,
   }),
   mounted() {
