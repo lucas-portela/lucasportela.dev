@@ -28,7 +28,7 @@
           >By Lucas Portela</a
         >
         <a
-          v-if="project.public"
+          v-if="project.link"
           class="project-link"
           target="_blank"
           :href="project.link"
@@ -75,8 +75,8 @@
               transition-next="scale"
               swipeable
               animated
-              control-color="white"
-              navigation
+              control-color="accent"
+              :navigation="false"
               padding
               arrows
               class="images h-52 md:h-80"
