@@ -79,6 +79,8 @@
               :navigation="false"
               padding
               arrows
+              autoplay
+              re
               class="images h-52 md:h-80"
             >
               <q-carousel-slide
