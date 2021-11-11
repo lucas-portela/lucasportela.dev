@@ -60,8 +60,7 @@ export default {
     termynal: null,
     keyframeEvent: "termynal.data80p.down",
     state: 0,
-    summary:
-      "Web App Development, Mobile App Development, Monolithic and Microservice back-end Development, Geolocation Applications, RFID Systems, Web Scrapping, Protocol Reverse Engineering, IA and Computer Vision.",
+    summary: `I’m Full Stack Developer with high level expertise in JavaScript and related technologies such as NodeJS, WebPack, TypeScript, Browserify, Yarn, Express, SolidJS, VueJS, Angular and StoryBook. Years of professional experience in Mobile App Development (Flutter, Cordova, Android Native), PHP, Java Spring, SQL, MongoDB, ElasticSearch, Firebase, Google Maps API, REST API design and implementation, GraphQL, Docker, Amazon AWS, Linux Bash Scripting, SSH, GitHub and Arduino.`,
     skills: [
       "NodeJS, Tomcat, Apache and Nginx",
       "Amazon S3 and EC2, Google Cloud Computing, Firebase",

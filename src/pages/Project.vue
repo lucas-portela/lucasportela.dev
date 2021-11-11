@@ -60,7 +60,13 @@
             :key="index"
           >
             <i :class="`mdi mdi-` + icon(tag)"></i>
-            {{ text(tag) }}
+            <template
+              v-for="(line, lineIndex) in text(tag).split('#nl')"
+              :Key="lineIndex"
+            >
+              {{ line }}<br />
+            </template>
+            {{}}
           </div>
         </div>
 

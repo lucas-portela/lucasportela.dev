@@ -21,7 +21,16 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli/boot-files
-    boot: ["i18n", "axios", "vue-p5", "skrollr", "jquery", "termynal", "utils"],
+    boot: [
+      "i18n",
+      "axios",
+      "vue-p5",
+      "skrollr",
+      "jquery",
+      "termynal",
+      "utils",
+      "firebase",
+    ],
 
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ["app.scss"],
